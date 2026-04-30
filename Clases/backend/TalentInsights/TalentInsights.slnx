@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="TalentInsights.Application/TalentInsights.Application.csproj" />
+  <Project Path="TalentInsights.Domain/TalentInsights.Domain.csproj" Id="712e65d1-88a1-4125-8155-572ec31e4bc9" />
+  <Project Path="TalentInsights.Infrastructure/TalentInsights.Infrastructure.csproj" Id="bf059556-e62e-4d59-bf36-0cc595754cd5" />
+  <Project Path="TalentInsights.Shared/TalentInsights.Shared.csproj" />
+  <Project Path="TalentInsights.WebApi/TalentInsights.WebApi.csproj">
+    <BuildDependency Project="TalentInsights.Shared/TalentInsights.Shared.csproj" />
+  </Project>
+</Solution>

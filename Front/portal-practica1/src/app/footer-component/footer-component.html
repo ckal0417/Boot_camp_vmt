@@ -1,0 +1,13 @@
+<footer class="footer">
+  <nav>
+    <p>{{fecha | date: 'yyyy' }}</p>
+  </nav>
+  <nav>
+    <button (click)="mostrarMensaje()">
+        {{cboton}}
+    </button>
+    @if (mensajeVisible) {
+        <p class="toast">{{ crmensaje }}</p>
+    }
+  </nav>
+</footer>

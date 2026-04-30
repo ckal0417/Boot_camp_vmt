@@ -1,0 +1,32 @@
+.footer {
+  padding: 16px 32px;
+  background-color: #090531;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+nav {
+  font-weight: 400;
+  text-align: center;
+  margin-top: 10px;
+}
+nav a {
+  color: #38bdf8;
+  margin:0 auto;
+  background-color: #1e293b;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  background: #1e293b;
+  color: #38bdf8;
+
+  padding: 10px 16px;
+  border-radius: 8px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
