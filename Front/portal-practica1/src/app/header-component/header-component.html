@@ -6,8 +6,13 @@
         {{nombre}}
     </span>
 
-    <a (click)="conectado = !conectado">
+
+    <a>
+      <button (click)="conectado = !conectado">
         {{ conectado ? 'Desconectar' : 'Conectar' }}
+      </button>
     </a>
+
+
   </nav>
 </header>
