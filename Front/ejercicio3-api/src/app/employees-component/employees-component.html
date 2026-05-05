@@ -1,0 +1,79 @@
+<h2>Lista de Empleados</h2>
+
+<div class="buscador-contenedor">
+  <input
+    class="buscador"
+    type="text"
+    placeholder="🔎 Buscar empleado por ID..."
+    [(ngModel)]="busqueda"
+    (input)="buscar()"
+  />
+</div>
+
+@if (busqueda.trim() !== '') {
+
+  <h3 class="result-title">Resultado de búsqueda</h3>
+
+  @if (employeeBuscado$ | async; as emp) {
+
+    <div class="container">
+      <div class="card">
+
+        <div class="avatar" *ngIf="emp.avatar">
+          <img [src]="emp.avatar" alt="Avatar empleado">
+        </div>
+
+        <h3>{{ emp.name || 'Empleado' }}</h3>
+
+        <div class="info">
+          @for (item of emp | keyvalue; track item.key) {
+            @if (item.key !== 'avatar') {
+              <p>
+                <strong>{{ item.key | titlecase }}:</strong>
+                {{ item.value }}
+              </p>
+            }
+          }
+        </div>
+
+      </div>
+    </div>
+
+  } @else {
+    <p class="error">No hay resultados</p>
+  }
+
+} @else {
+
+  @if (employees$ | async; as employees) {
+
+    <p class="total">Total empleados: {{ employees.length }}</p>
+
+    <div class="container">
+      @for (emp of employees; track emp.id) {
+        <div class="card">
+
+          <div class="avatar" *ngIf="emp.avatar">
+            <img [src]="emp.avatar" alt="Avatar empleado">
+          </div>
+
+          <h3>{{ emp.name || 'Empleado' }}</h3>
+
+          <div class="info">
+            @for (item of emp | keyvalue; track item.key) {
+              @if (item.key !== 'avatar') {
+                <p>
+                  <strong>{{ item.key | titlecase }}:</strong>
+                  {{ item.value }}
+                </p>
+              }
+            }
+          </div>
+
+        </div>
+      }
+    </div>
+
+  }
+
+}

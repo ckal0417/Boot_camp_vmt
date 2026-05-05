@@ -1,0 +1,73 @@
+<h2>Lista de Departamentos</h2>
+
+<div class="buscador-contenedor">
+  <input
+    class="buscador"
+    type="text"
+    placeholder="🔎 Buscar departamento por ID..."
+    [(ngModel)]="busqueda"
+    (input)="buscar()"
+  />
+</div>
+
+<hr>
+
+@if (busqueda.trim() !== '') {
+
+  <h3 class="result-title">Resultado de búsqueda</h3>
+
+  @if (departmentBuscado$ | async; as dep) {
+
+    <div class="container">
+      <div class="card">
+
+        <h3>{{ dep.name || 'Departamento' }}</h3>
+
+        <div class="info">
+          @for (item of dep | keyvalue; track item.key) {
+            <p>
+              <strong>{{ item.key | titlecase }}:</strong>
+              {{ item.value }}
+            </p>
+          }
+        </div>
+
+      </div>
+    </div>
+
+  } @else {
+    <p class="error">No hay resultados</p>
+  }
+
+} @else {
+
+  @if (departments$ | async; as departments) {
+
+    <p class="total">Total departamentos: {{ departments.length }}</p>
+
+    <div class="container">
+
+      @for (dep of departments; track dep.id) {
+
+        <div class="card">
+
+          <h3>{{ dep.name || 'Departamento' }}</h3>
+
+          <div class="info">
+            @for (item of dep | keyvalue; track item.key) {
+              <p>
+                <strong>{{ item.key | titlecase }}:</strong>
+                {{ item.value }}
+              </p>
+            }
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  }
+
+}
