@@ -1,4 +1,7 @@
 export interface Department {
-  id: string;
+  id?: string;
+  createdAt?: string;
   name: string;
+  description: string;
+  manager: string;
 }

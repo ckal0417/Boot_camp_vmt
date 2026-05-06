@@ -3,13 +3,11 @@ h2 {
   color: white;
   margin: 10px 0 20px;
 }
-
 p {
   text-align: left;
   color: white;
   margin: 10px 0 20px;
 }
-
 .buscador-contenedor {
   display: flex;
   justify-content: flex-end; /* 🔥 mueve a la derecha */
@@ -17,8 +15,6 @@ p {
 }
 
 .buscador {
-
-
   width: 280px;
   padding: 10px 14px;
   border-radius: 10px;
@@ -97,4 +93,43 @@ p {
   font-size: 14px;
   margin: 6px 0;
   word-break: break-word;
+}
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+  gap: 15px;
+}
+
+
+
+.formulario {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.formulario input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1f1f1f;
+  color: white;
+  outline: none;
+}
+
+.cancelar {
+  background: #555 !important;
+}
+
+.btn-danger {
+  background: #e53935;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #c62828;
 }
