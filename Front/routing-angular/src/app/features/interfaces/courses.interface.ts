@@ -4,4 +4,5 @@ export interface CoursesInterface {
     instructor: string;
     level: string;
     description: string;
+    createdAt: string;
 }

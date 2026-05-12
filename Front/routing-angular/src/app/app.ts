@@ -1,12 +1,17 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponents } from './shared/header-components/header-components';
+import { FooterComponents } from './shared/footer-components/footer-components';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    RouterOutlet,
+    HeaderComponents,
+    FooterComponents
+  ],
+
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss'],
 })
-export class App {
-  protected readonly title = signal('routing-angular');
-}
+export class App {}
