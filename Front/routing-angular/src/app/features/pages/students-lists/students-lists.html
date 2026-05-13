@@ -1,6 +1,11 @@
 @if (students$ | async; as students) {
 
   <p>Students: {{ students.length }}</p>
+  <!--Añadir-->
+<button 
+  mat-fab  routerLink="/students/create" >
+  <mat-icon>add</mat-icon>
+</button>
 
   @for (student of students; track student.id) {
     <mat-card style="margin: 10px">
@@ -14,9 +19,25 @@
       </mat-card-header>
 
       <mat-card-actions>
-        <button mat-button [routerLink]="['/students', student.id]">
-          Ver detalle
+
+        <!-- VER -->
+        <button
+          mat-icon-button [routerLink]="['/students', student.id]">
+          <mat-icon>visibility</mat-icon>
         </button>
+
+        <!-- EDITAR -->
+        <button
+          mat-icon-button [routerLink]="['/students/edit', student.id]">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <!-- ELIMINAR -->
+        <button 
+          mat-icon-button (click)="deleteStudent(student.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+
       </mat-card-actions>
     </mat-card>
   }
