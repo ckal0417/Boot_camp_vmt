@@ -101,4 +101,8 @@ export class StudentsForm implements OnInit {
 
     }
   }
+
+  cancel() {
+    this.router.navigate(['/students']);
+  }
 }

@@ -7,6 +7,7 @@
   <mat-icon>add</mat-icon>
 </button>
 
+<div class="students-grid">
   @for (student of students; track student.id) {
     <mat-card style="margin: 10px">
       <mat-card-header>
@@ -41,7 +42,10 @@
       </mat-card-actions>
     </mat-card>
   }
+</div>
 
 } @else {
   <mat-spinner></mat-spinner>
 }
+
+

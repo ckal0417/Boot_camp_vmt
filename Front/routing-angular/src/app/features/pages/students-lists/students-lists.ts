@@ -47,8 +47,7 @@ export class StudentsLists {
     const dialogRef = this.dialog.open(
       StudentsDialogue,
       {
-        width: '500px',
-        height: '220px',
+        width: '450px'
       }
     );
 
